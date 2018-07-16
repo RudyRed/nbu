@@ -5,9 +5,6 @@ const addNote = () => {
   return 'New note';
 }
 
-const add = (a, b) => a + b;
-
 module.exports = {
   addNote,
-  add,
 }
