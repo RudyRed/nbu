@@ -11,7 +11,18 @@ console.log(`Command: ${command}`);
 console.log('Yargs', argv);
 
 if (command === 'add') {
-  notes.addNote(argv.title, argv.body);
+
+  const note = notes.addNote(argv.title, argv.body);
+
+  if (note) {
+    console.log('Note Created');
+    console.log(' ');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
+  } else {
+    console.log('Note title already in use');
+  }
+
 } else if (command === 'remove') {
   notes.removeNote(argv.title);
 } else if (command === 'list') {
