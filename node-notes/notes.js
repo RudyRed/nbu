@@ -45,6 +45,7 @@ const removeNote = title => {
 };
 
 const logNote = ({title, body}) => {
+  debugger;
   console.log(' ');
   console.log(`Title: ${title}`);
   console.log(`Body: ${body}`);
