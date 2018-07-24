@@ -24,7 +24,11 @@ if (command === 'add') {
   }
 
 } else if (command === 'remove') {
-  notes.removeNote(argv.title);
+
+  const noteRemoverd = notes.removeNote(argv.title);
+  const message = noteRemoverd ? 'Note was removed' : 'Note not found';
+  console.log(message);
+
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'read') {
