@@ -1,3 +1,23 @@
+const asyncAdd = (a, b) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof a === 'number' && typeof b === 'number') {
+        resolve(a + b);
+      }
+      reject('Args must be Nums');
+    }, 1500)
+  })
+};
+
+asyncAdd(2 + 3, '7').then(res => {
+  console.log(`Results: ${res}`)
+  return asyncAdd(res, 33);
+}).then(res => {
+  console.log(`Results: ${res}`);
+}).catch(e => {
+  console.log(e);
+});
+
 const somePromise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve('hey');
