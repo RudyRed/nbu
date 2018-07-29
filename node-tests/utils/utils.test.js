@@ -10,6 +10,19 @@ it('should square a number', () => {
   expect(utils.square(12)).toBe(144).toBeA('number');
 });
 
+it('should async add two numbers', (done) => {
+  utils.asyncAdd(4, 3, (sum) => {
+    expect(sum).toBe(7).toBeA('number');
+    done();
+  });
+});
+
+it('should async square a number', (done) => {
+  utils.asyncSquare(5, (res) => {
+    expect(res).toBe(25).toBeA('number');
+    done();
+  });
+});
 
 it('should set firstName and lastName', () => {
   var user = {location: 'Canada', age: 25};
